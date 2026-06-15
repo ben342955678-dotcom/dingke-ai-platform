@@ -1,5 +1,5 @@
 window.DKSY_SUPABASE_CONFIG = {
-  mode: "local",
-  url: "",
-  anonKey: ""
+  mode: "supabase",
+  url: "https://dqezctfmocnkjcersnfo.supabase.co",
+  anonKey: "sb_publishable_xxxxxxxxxxxxxxxxxxxxxxxxx"
 };
