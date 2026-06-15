@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>客户详情 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="customer-detail">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Customer Detail</span><h1 id="detailTitle">客户详情</h1></div>
+          <div class="actions"><a class="btn" href="./customers.html">返回客户列表</a></div>
+        </header>
+        <section class="content">
+          <div class="detail-grid">
+            <section class="panel">
+              <div class="panel-head"><h2>基本信息</h2></div>
+              <dl class="info-list" id="detailBasic"></dl>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>下次跟进提醒</h2></div>
+              <p id="detailReminder" class="notice"></p>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>联系人</h2></div>
+              <div id="detailContacts" class="stack-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>拜访记录</h2></div>
+              <div id="detailVisits" class="stack-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>报价记录</h2></div>
+              <div id="detailQuotes" class="stack-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>合同记录</h2></div>
+              <div id="detailContracts" class="stack-list"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="login">
+    <main class="login-page">
+      <section class="login-box">
+        <div class="login-intro">
+          <p>鼎科盛业智能化工程有限公司</p>
+          <h1>AI销售作战平台</h1>
+          <p>客户、项目、合同、回款、费用和AI销售动作统一管理。第六阶段加入账号登录与角色权限，不接OpenAI。</p>
+        </div>
+        <form class="login-form" id="loginForm">
+          <label>邮箱<input value="boss@dksy.cn" name="email" type="email" autocomplete="email" required /></label>
+          <label>密码<input type="password" value="123456" name="password" autocomplete="current-password" required /></label>
+          <p class="login-error" id="loginError" hidden></p>
+          <button class="btn primary" type="submit">登录系统</button>
+        </form>
+      </section>
+    </main>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/login.js"></script>
+  </body>
+</html>

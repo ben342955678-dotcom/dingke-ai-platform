@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>回款财务 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="finance">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Finance</span><h1>回款财务</h1></div>
+          <div class="actions"><a class="btn" href="./contracts.html">新增合同</a></div>
+        </header>
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head"><h2>新增费用</h2></div>
+            <form class="form-grid" id="expenseForm">
+              <input type="hidden" name="id" />
+              <label>费用名称<input name="name" required placeholder="例如：办公室房租" /></label>
+              <label>费用分类<select name="category"><option>员工工资</option><option>房租</option><option>车辆费用</option><option>办公费用</option><option>供应商欠款</option><option>项目支出</option></select></label>
+              <label>金额<input name="amount" type="number" min="0" required placeholder="46000" /></label>
+              <div class="form-actions"><button class="btn primary" type="submit" id="expenseSubmit">新增费用</button><button class="btn" type="button" id="expenseCancel">取消编辑</button></div>
+            </form>
+          </section>
+          <div class="summary-grid">
+            <article class="card"><span>已回款</span><strong id="financePaid">0 万</strong><em>来自合同已回款字段</em></article>
+            <article class="card"><span>未回款</span><strong id="financeUnpaid">0 万</strong><em>合同金额 - 已回款</em></article>
+            <article class="card"><span>经营费用</span><strong id="financeCost">0 万</strong><em>工资、房租、车辆、办公、供应商、项目支出</em></article>
+          </div>
+          <section class="panel">
+            <div class="panel-head"><h2>回款明细</h2></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>合同项目</th><th>合同金额</th><th>已回款</th><th>未回款</th><th>付款节点</th><th>状态</th></tr></thead>
+                <tbody id="financeRows"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>费用分类</h2></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>费用名称</th><th>费用分类</th><th>金额</th><th>操作</th></tr></thead>
+                <tbody id="expenseRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>经营看板 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Dashboard</span><h1>经营看板</h1></div>
+          <div class="actions"><a class="btn" href="./login.html">退出</a></div>
+        </header>
+        <section class="content">
+          <div class="kpi-grid">
+            <article class="card"><span>客户数量</span><strong id="kpiCustomers">0</strong><em>学校、医院、政府、园区</em></article>
+            <article class="card"><span>项目数量</span><strong id="kpiProjects">0</strong><em>在谈和在建项目</em></article>
+            <article class="card"><span>合同总额</span><strong id="kpiContracts">0 万</strong><em>本地JSON模拟统计</em></article>
+            <article class="card"><span>未回款</span><strong id="kpiUnpaid">0 万</strong><em>自动计算合同差额</em></article>
+          </div>
+          <section class="panel">
+            <div class="panel-head"><h2>经营提醒</h2></div>
+            <p id="dashboardHint">正在读取本地数据...</p>
+          </section>
+          <section class="panel mobile-priority">
+            <div class="panel-head"><h2>今日重点</h2></div>
+            <div class="mobile-priority-grid">
+              <article><span>今日考勤异常</span><strong id="todayAbnormal">0</strong></article>
+              <article><span>今日施工日志</span><strong id="todayConstruction">0</strong></article>
+              <article><span>待审批报销</span><strong id="pendingReimbursements">0</strong></article>
+              <article><span>待审批加班</span><strong id="pendingOvertime">0</strong></article>
+              <article><span>逾期回款</span><strong id="overduePayments">0</strong></article>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>项目进度概览</h2><a class="btn" href="./projects.html">查看项目</a></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>项目名称</th><th>客户</th><th>阶段</th><th>进度</th><th>完成度</th></tr></thead>
+                <tbody id="dashboardProjects"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

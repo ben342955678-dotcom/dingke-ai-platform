@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI助手 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="ai">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>AI Assistant</span><h1>AI销售助手</h1></div>
+          <div class="actions"><a class="btn" href="./customers.html">查看客户</a></div>
+        </header>
+        <section class="content">
+          <div class="two-col">
+            <section class="panel">
+              <div class="panel-head"><h2>功能入口</h2></div>
+              <label>客户名称<input id="aiCustomer" value="海淀区某中学" /></label>
+              <label>项目方向<select id="aiScenario"><option>校园安防</option><option>医院监控扩容</option><option>园区机房建设</option><option>智慧食堂</option><option>智慧体育</option><option>综合布线</option></select></label>
+              <div class="ai-buttons">
+                <button class="btn primary" data-ai="visit">生成拜访计划</button>
+                <button class="btn" data-ai="solution">生成项目方案</button>
+                <button class="btn warn" data-ai="payment">生成催款话术</button>
+              </div>
+            </section>
+            <section class="panel">
+              <div class="panel-head"><h2>生成结果</h2></div>
+              <pre id="aiOutput">当前为本地静态模拟，不接OpenAI。选择客户和项目方向后，点击左侧按钮生成内容。</pre>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

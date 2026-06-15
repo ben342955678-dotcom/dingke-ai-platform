@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>加班管理 - 鼎科盛业AI销售作战平台</title><link rel="stylesheet" href="./assets/crm.css" /></head>
+  <body data-page="overtime">
+    <div class="app-layout">
+      <aside class="sidebar"><a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a><nav class="menu"><a href="./dashboard.html">经营看板</a><a href="./customers.html">客户管理</a><a href="./projects.html">项目管理</a><a href="./contracts.html">合同管理</a><a href="./finance.html">回款财务</a><a href="./attendance.html">外勤考勤</a><a href="./construction-logs.html">施工日志</a><a href="./work-logs.html">工作日志</a><a href="./reimbursements.html">报销管理</a><a href="./overtime.html">加班管理</a><a href="./ai-assistant.html">AI助手</a></nav></aside>
+      <main class="main">
+        <header class="topbar"><div><span>Overtime</span><h1>加班管理</h1></div><div class="actions"><a class="btn" href="./login.html">退出</a></div></header>
+        <section class="content">
+          <section class="panel"><div class="panel-head"><h2>新增加班</h2></div><form class="form-grid" id="overtimeForm"><input type="hidden" name="id" /><label>加班人员<input name="employeeName" required /></label><label>所属项目<input name="projectName" /></label><label>加班日期<input name="overtimeDate" type="date" required /></label><label>开始时间<input name="startTime" type="time" required /></label><label>结束时间<input name="endTime" type="time" required /></label><label>审批状态<select name="status"><option>待审批</option><option>已通过</option><option>已驳回</option></select></label><label class="wide">加班原因<input name="reason" required /></label><div class="form-actions"><button class="btn primary" type="submit" id="overtimeSubmit">新增加班</button><button class="btn" type="button" id="overtimeCancel">取消编辑</button></div></form></section>
+          <section class="panel"><div class="panel-head"><h2>加班列表</h2></div><div class="table-wrap"><table><thead><tr><th>人员</th><th>项目</th><th>日期</th><th>开始</th><th>结束</th><th>时长</th><th>原因</th><th>状态</th><th>操作</th></tr></thead><tbody id="overtimeRows"></tbody></table></div></section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script><script src="./assets/db-service.js"></script><script src="./assets/crm.js"></script>
+  </body>
+</html>

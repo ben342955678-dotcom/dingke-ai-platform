@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>客户管理 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="customers">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Customers</span><h1>客户管理</h1></div>
+          <div class="actions"><a class="btn" href="./dashboard.html">返回看板</a></div>
+        </header>
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head"><h2>新增客户</h2></div>
+            <form class="form-grid" id="customerForm">
+              <input type="hidden" name="id" />
+              <label>客户名称<input name="name" required placeholder="例如：海淀区某学校" /></label>
+              <label>客户分类<select name="category"><option>学校</option><option>医院</option><option>政府</option><option>企业园区</option><option>总包单位</option><option>合作伙伴</option></select></label>
+              <label>联系人<input name="contact" required placeholder="负责人姓名" /></label>
+              <label>电话<input name="phone" required placeholder="联系电话" /></label>
+              <label>项目需求<input name="need" required placeholder="视频监控、门禁系统" /></label>
+              <label>跟进状态<select name="status"><option>初步沟通</option><option>现场勘查</option><option>方案报价</option><option>合同审批</option><option>已成交</option></select></label>
+              <label>下次拜访时间<input name="nextVisit" required placeholder="2026-06-22 10:00" /></label>
+              <label>客户地址<input name="address" placeholder="北京市..." /></label>
+              <label class="wide">下次跟进提醒<input name="reminder" placeholder="例如：本周五前确认点位清单" /></label>
+              <div class="form-actions"><button class="btn primary" type="submit" id="customerSubmit">新增客户</button><button class="btn" type="button" id="customerCancel">取消编辑</button></div>
+            </form>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>客户列表</h2></div>
+            <div class="toolbar">
+              <input id="customerSearch" placeholder="搜索客户、联系人、电话、需求" />
+              <select id="customerFilter">
+                <option value="">全部类型</option>
+                <option>学校</option>
+                <option>医院</option>
+                <option>政府</option>
+                <option>企业园区</option>
+                <option>总包单位</option>
+                <option>合作伙伴</option>
+              </select>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>客户名称</th><th>客户分类</th><th>联系人</th><th>电话</th><th>项目需求</th><th>跟进状态</th><th>下次拜访时间</th><th>操作</th></tr></thead>
+                <tbody id="customerRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>项目管理 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="projects">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Projects</span><h1>项目管理</h1></div>
+          <div class="actions"><a class="btn" href="./contracts.html">进入合同</a></div>
+        </header>
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head"><h2>新增项目</h2></div>
+            <form class="form-grid" id="projectForm">
+              <input type="hidden" name="id" />
+              <label>项目名称<input name="name" required placeholder="例如：校园安防改造" /></label>
+              <label>客户名称<input name="customer" required placeholder="对应客户" /></label>
+              <label>项目类型<select name="type"><option>视频监控</option><option>门禁系统</option><option>综合布线</option><option>机房建设</option><option>智慧食堂</option><option>智慧体育</option><option>弱电集成</option></select></label>
+              <label>项目负责人<input name="manager" required placeholder="张工" /></label>
+              <label>项目阶段<select name="stage"><option>线索</option><option>方案</option><option>报价</option><option>合同</option><option>施工</option><option>验收</option><option>回款</option><option>完成</option></select></label>
+              <label>项目金额<input name="amount" type="number" min="0" required placeholder="1180000" /></label>
+              <label>进度<input name="progress" type="number" min="0" max="100" value="10" required /></label>
+              <label>计划完成日期<input name="deadline" type="date" required /></label>
+              <label class="wide">项目风险提醒<input name="risk" required placeholder="例如：施工窗口短，需提前确认进场手续" /></label>
+              <div class="form-actions"><button class="btn primary" type="submit" id="projectSubmit">新增项目</button><button class="btn" type="button" id="projectCancel">取消编辑</button></div>
+            </form>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>项目列表</h2></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>项目名称</th><th>客户</th><th>负责人</th><th>阶段</th><th>金额</th><th>进度</th><th>风险提醒</th><th>计划完成</th><th>操作</th></tr></thead>
+                <tbody id="projectRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

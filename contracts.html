@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>合同管理 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="contracts">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Contracts</span><h1>合同管理</h1></div>
+          <div class="actions"><a class="btn" href="./finance.html">查看回款</a></div>
+        </header>
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head"><h2>新增合同</h2></div>
+            <form class="form-grid" id="contractForm">
+              <input type="hidden" name="id" />
+              <label>合同编号<input name="number" required placeholder="DK-2026-0605" /></label>
+              <label>合同项目<input name="project" required placeholder="例如：学校门禁系统" /></label>
+              <label>客户名称<input name="customer" required placeholder="签约客户" /></label>
+              <label>合同金额<input name="amount" type="number" min="0" required placeholder="860000" /></label>
+              <label>已回款<input name="paid" type="number" min="0" value="0" required /></label>
+              <label>付款节点<select name="node"><option>首付款</option><option>进度款</option><option>验收款</option><option>尾款</option><option>质保金</option></select></label>
+              <label>发票状态<select name="invoiceStatus"><option>未开票</option><option>部分开票</option><option>已开票</option><option>待开票</option></select></label>
+              <label>付款日期<input name="dueDate" type="date" required /></label>
+              <label>逾期状态<select name="overdueStatus"><option>未逾期</option><option>本周到期</option><option>逾期</option><option>资料待补</option></select></label>
+              <div class="form-actions"><button class="btn primary" type="submit" id="contractSubmit">新增合同</button><button class="btn" type="button" id="contractCancel">取消编辑</button></div>
+            </form>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>合同列表</h2></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>合同编号</th><th>合同项目</th><th>客户</th><th>合同金额</th><th>已回款</th><th>未回款</th><th>付款节点</th><th>发票状态</th><th>逾期状态</th><th>催款提醒</th><th>操作</th></tr></thead>
+                <tbody id="contractRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>

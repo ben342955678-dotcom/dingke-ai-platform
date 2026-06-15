@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>外勤考勤 - 鼎科盛业AI销售作战平台</title>
+    <link rel="stylesheet" href="./assets/crm.css" />
+  </head>
+  <body data-page="attendance">
+    <div class="app-layout">
+      <aside class="sidebar">
+        <a class="brand" href="./dashboard.html"><span class="brand-mark">鼎</span><span><strong>鼎科盛业CRM</strong><small>AI销售作战平台</small></span></a>
+        <nav class="menu">
+          <a href="./dashboard.html">经营看板</a>
+          <a href="./customers.html">客户管理</a>
+          <a href="./projects.html">项目管理</a>
+          <a href="./contracts.html">合同管理</a>
+          <a href="./finance.html">回款财务</a>
+          <a href="./attendance.html">外勤考勤</a>
+          <a href="./construction-logs.html">施工日志</a>
+          <a href="./work-logs.html">工作日志</a>
+          <a href="./reimbursements.html">报销管理</a>
+          <a href="./overtime.html">加班管理</a>
+          <a href="./ai-assistant.html">AI助手</a>
+        </nav>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div><span>Attendance</span><h1>外勤考勤</h1></div>
+          <div class="actions"><a class="btn" href="./login.html">退出</a></div>
+        </header>
+        <section class="content">
+          <section class="panel quick-punch">
+            <div class="panel-head"><h2>现场一键打卡</h2></div>
+            <div class="quick-punch-grid">
+              <div><span>当前时间</span><strong id="currentTime">--</strong></div>
+              <label>打卡地点<input id="quickLocation" placeholder="点击定位或手动填写" /></label>
+              <label>所属项目<input id="quickProject" placeholder="项目名称" /></label>
+              <label>现场照片<input id="quickPhoto" type="file" accept="image/*" capture="environment" /></label>
+              <button class="btn primary" id="quickPunch" type="button">一键打卡</button>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>新增打卡记录</h2></div>
+            <form class="form-grid" id="attendanceForm">
+              <input type="hidden" name="id" />
+              <label>打卡类型<select name="type"><option>办公室打卡</option><option>外勤打卡</option></select></label>
+              <label>员工姓名<input name="employeeName" required placeholder="张三" /></label>
+              <label>打卡时间<input name="checkTime" required placeholder="2026-06-14 08:55" /></label>
+              <label>打卡地点<input name="location" required placeholder="公司办公室 / 项目现场" /></label>
+              <label>所属项目<input name="projectName" placeholder="项目名称" /></label>
+              <label>是否迟到<select name="isLate"><option>否</option><option>是</option></select></label>
+              <label>是否异常<select name="isAbnormal"><option>否</option><option>是</option></select></label>
+              <label>现场照片<input name="photo" type="file" accept="image/*" capture="environment" /></label>
+              <label class="wide">备注<input name="remark" placeholder="补充说明" /></label>
+              <div class="form-actions"><button class="btn primary" type="submit" id="attendanceSubmit">新增记录</button><button class="btn" type="button" id="attendanceCancel">取消编辑</button></div>
+            </form>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>考勤记录</h2></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>类型</th><th>员工</th><th>时间</th><th>地点</th><th>项目</th><th>迟到</th><th>异常</th><th>照片</th><th>备注</th><th>操作</th></tr></thead>
+                <tbody id="attendanceRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/supabase-config.js"></script>
+    <script src="./assets/db-service.js"></script>
+    <script src="./assets/crm.js"></script>
+  </body>
+</html>
