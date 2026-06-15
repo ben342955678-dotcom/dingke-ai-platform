@@ -1,0 +1,194 @@
+{
+  "customers": [
+    {
+      "id": "C-001",
+      "name": "海淀区某中学",
+      "category": "学校",
+      "contact": "李主任",
+      "phone": "138****2601",
+      "need": "校园安防、智慧体育",
+      "status": "现场勘查",
+      "nextVisit": "2026-06-18 10:00",
+      "address": "北京市海淀区",
+      "contacts": [
+        { "name": "李主任", "role": "总务主任", "phone": "138****2601" },
+        { "name": "周老师", "role": "信息中心", "phone": "136****1120" }
+      ],
+      "visits": [
+        { "date": "2026-06-10", "content": "复核校门、操场、食堂监控点位，客户希望暑期完成施工。" }
+      ],
+      "quotes": [
+        { "date": "2026-06-12", "name": "校园安防初步报价", "amount": 1180000 }
+      ],
+      "contracts": ["HT-004"],
+      "reminder": "2026-06-18 前确认操场和食堂点位数量。"
+    },
+    {
+      "id": "C-002",
+      "name": "朝阳区某医院",
+      "category": "医院",
+      "contact": "王科长",
+      "phone": "139****7718",
+      "need": "视频监控、门禁系统",
+      "status": "方案报价",
+      "nextVisit": "2026-06-19 14:30",
+      "address": "北京市朝阳区",
+      "contacts": [
+        { "name": "王科长", "role": "保卫科", "phone": "139****7718" }
+      ],
+      "visits": [
+        { "date": "2026-06-08", "content": "门急诊、药房、后勤通道需要补充高清摄像机。" }
+      ],
+      "quotes": [
+        { "date": "2026-06-11", "name": "医院监控扩容报价", "amount": 1280000 }
+      ],
+      "contracts": ["HT-002"],
+      "reminder": "补齐病区门禁清单后再次报价。"
+    },
+    {
+      "id": "C-003",
+      "name": "丰台某政府单位",
+      "category": "政府",
+      "contact": "赵工",
+      "phone": "136****0928",
+      "need": "综合布线、机房建设",
+      "status": "初步沟通",
+      "nextVisit": "2026-06-20 09:30",
+      "address": "北京市丰台区",
+      "contacts": [
+        { "name": "赵工", "role": "信息中心", "phone": "136****0928" }
+      ],
+      "visits": [],
+      "quotes": [],
+      "contracts": [],
+      "reminder": "预约信息中心确认弱电井和机房现状。"
+    },
+    {
+      "id": "C-004",
+      "name": "亦庄企业园区",
+      "category": "企业园区",
+      "contact": "陈经理",
+      "phone": "135****6832",
+      "need": "网络工程、弱电集成",
+      "status": "合同审批",
+      "nextVisit": "2026-06-21 15:00",
+      "address": "北京经济技术开发区",
+      "contacts": [
+        { "name": "陈经理", "role": "园区工程部", "phone": "135****6832" }
+      ],
+      "visits": [
+        { "date": "2026-06-06", "content": "确认机房供电、网络主干和楼宇综合布线范围。" }
+      ],
+      "quotes": [
+        { "date": "2026-06-09", "name": "园区机房建设报价", "amount": 960000 }
+      ],
+      "contracts": ["HT-003"],
+      "reminder": "跟进合同盖章和首付款节点。"
+    }
+  ],
+  "projects": [
+    {
+      "id": "P-001",
+      "name": "海淀中学校园安防改造",
+      "customer": "海淀区某中学",
+      "type": "校园安防",
+      "manager": "张工",
+      "stage": "施工",
+      "amount": 1180000,
+      "progress": 72,
+      "risk": "暑期施工窗口短，需提前确认进场手续。",
+      "deadline": "2026-07-15"
+    },
+    {
+      "id": "P-002",
+      "name": "朝阳医院监控扩容",
+      "customer": "朝阳区某医院",
+      "type": "视频监控",
+      "manager": "刘工",
+      "stage": "报价",
+      "amount": 1280000,
+      "progress": 46,
+      "risk": "病区施工需避开门诊高峰，夜间施工成本可能增加。",
+      "deadline": "2026-07-28"
+    },
+    {
+      "id": "P-003",
+      "name": "亦庄园区机房建设",
+      "customer": "亦庄企业园区",
+      "type": "机房建设",
+      "manager": "王工",
+      "stage": "验收",
+      "amount": 960000,
+      "progress": 88,
+      "risk": "需补齐设备标签照片和竣工测试记录。",
+      "deadline": "2026-06-30"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "HT-001",
+      "number": "DK-2026-0601",
+      "project": "昌平学校门禁系统",
+      "customer": "昌平区某学校",
+      "amount": 860000,
+      "paid": 520000,
+      "node": "进度款",
+      "invoiceStatus": "已开票",
+      "dueDate": "2026-06-02",
+      "overdueStatus": "逾期",
+      "status": "逾期"
+    },
+    {
+      "id": "HT-002",
+      "number": "DK-2026-0602",
+      "project": "医院视频监控扩容",
+      "customer": "朝阳区某医院",
+      "amount": 1280000,
+      "paid": 640000,
+      "node": "验收款",
+      "invoiceStatus": "待开票",
+      "dueDate": "2026-06-25",
+      "overdueStatus": "未逾期",
+      "status": "资料待补"
+    },
+    {
+      "id": "HT-003",
+      "number": "DK-2026-0603",
+      "project": "亦庄园区机房建设",
+      "customer": "亦庄企业园区",
+      "amount": 960000,
+      "paid": 780000,
+      "node": "尾款",
+      "invoiceStatus": "已开票",
+      "dueDate": "2026-06-19",
+      "overdueStatus": "未逾期",
+      "status": "本周到期"
+    },
+    {
+      "id": "HT-004",
+      "number": "DK-2026-0604",
+      "project": "海淀中学校园安防改造",
+      "customer": "海淀区某中学",
+      "amount": 1180000,
+      "paid": 360000,
+      "node": "进度款",
+      "invoiceStatus": "部分开票",
+      "dueDate": "2026-06-28",
+      "overdueStatus": "未逾期",
+      "status": "正常"
+    }
+  ],
+  "employees": [
+    { "id": "E-001", "name": "张三", "role": "销售经理", "salary": 18000 },
+    { "id": "E-002", "name": "李四", "role": "项目经理", "salary": 22000 },
+    { "id": "E-003", "name": "王五", "role": "弱电工程师", "salary": 16000 }
+  ],
+  "expenses": [
+    { "id": "F-001", "name": "员工工资", "category": "员工工资", "amount": 238000 },
+    { "id": "F-002", "name": "办公室房租", "category": "房租", "amount": 46000 },
+    { "id": "F-003", "name": "车辆油费及停车", "category": "车辆费用", "amount": 8500 },
+    { "id": "F-004", "name": "办公用品及网络", "category": "办公费用", "amount": 6200 },
+    { "id": "F-005", "name": "摄像机供应商欠款", "category": "供应商欠款", "amount": 126000 },
+    { "id": "F-006", "name": "医院项目施工支出", "category": "项目支出", "amount": 78000 }
+  ]
+}
